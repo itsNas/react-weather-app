@@ -31,8 +31,27 @@ body {
   justify-content: center;
 }
 
+.Nav {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.SearchBox {
+  max-width: 1080px;
+  margin: 20px auto;
+  width: 100%;
+}
+
+.Main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .container {
-  border-radius: 25px;
+  border-radius: 0px;
+  /* margin: 5px; */
   -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
   background-color: #222831;
@@ -45,7 +64,7 @@ body {
   height: 100%;
   border-radius: 25px;
   background-image: url("https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
-  width: 300px;
+  width: 400px;
   -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
   -webkit-transition: -webkit-transform 300ms ease;
@@ -240,4 +259,26 @@ body {
   height: 1em;
   width: auto;
   margin-right: 5px;
+}
+
+/* Mobile devices (portrait) */
+@media only screen and (max-width: 480px) {
+  .Main {
+    flex-direction: column;
+  }
+  .weather-side {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .info-side {
+    width: 100%;
+  }
+  .week-list {
+    margin: 0;
+    padding: 10px;
+  }
+  .week-list > li {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
