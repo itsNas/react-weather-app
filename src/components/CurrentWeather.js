@@ -2,18 +2,18 @@ import React from "react";
 
 function CurrentWeather() {
   return (
-    <div class="weather-side">
-      <div class="weather-gradient"></div>
-      <div class="date-container">
-        <h2 class="date-dayname">Tuesday</h2>
-        <span class="date-day">15 Jan 2019</span>
-        <i class="location-icon" data-feather="map-pin"></i>
-        <span class="location">Paris, FR</span>
+    <div className="weather-side">
+      <div className="weather-gradient"></div>
+      <div className="date-container">
+        <h2 className="date-dayname">Tuesday</h2>
+        <span className="date-day">15 Jan 2019</span>
+        <i className="location-icon" data-feather="map-pin"></i>
+        <span className="location">Paris, FR</span>
       </div>
-      <div class="weather-container">
-        <i class="weather-icon" data-feather="sun"></i>
-        <h1 class="weather-temp">29°C</h1>
-        <h3 class="weather-desc">Sunny</h3>
+      <div className="weather-container">
+        <i className="weather-icon" data-feather="sun"></i>
+        <h1 className="weather-temp">29°C</h1>
+        <h3 className="weather-desc">Sunny</h3>
       </div>
     </div>
   );

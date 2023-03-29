@@ -2,56 +2,56 @@ import React from "react";
 
 function Forecast() {
   return (
-    <div class="info-side">
-      <div class="today-info-container">
-        <div class="today-info">
-          <div class="precipitation">
+    <div className="info-side">
+      <div className="today-info-container">
+        <div className="today-info">
+          <div className="precipitation">
             {" "}
-            <span class="title">PRECIPITATION</span>
-            <span class="value">0 %</span>
-            <div class="clear"></div>
+            <span className="title">PRECIPITATION</span>
+            <span className="value">0 %</span>
+            <div className="clear"></div>
           </div>
-          <div class="humidity">
+          <div className="humidity">
             {" "}
-            <span class="title">HUMIDITY</span>
-            <span class="value">34 %</span>
-            <div class="clear"></div>
+            <span className="title">HUMIDITY</span>
+            <span className="value">34 %</span>
+            <div className="clear"></div>
           </div>
-          <div class="wind">
+          <div className="wind">
             {" "}
-            <span class="title">WIND</span>
-            <span class="value">0 km/h</span>
-            <div class="clear"></div>
+            <span className="title">WIND</span>
+            <span className="value">0 km/h</span>
+            <div className="clear"></div>
           </div>
         </div>
       </div>
-      <div class="week-container">
-        <ul class="week-list">
-          <li class="active">
-            <i class="day-icon" data-feather="sun"></i>
-            <span class="day-name">Tue</span>
-            <span class="day-temp">29°C</span>
+      <div className="week-container">
+        <ul className="week-list">
+          <li className="active">
+            <i className="day-icon" data-feather="sun"></i>
+            <span className="day-name">Tue</span>
+            <span className="day-temp">29°C</span>
           </li>
           <li>
-            <i class="day-icon" data-feather="cloud"></i>
-            <span class="day-name">Wed</span>
-            <span class="day-temp">21°C</span>
+            <i className="day-icon" data-feather="cloud"></i>
+            <span className="day-name">Wed</span>
+            <span className="day-temp">21°C</span>
           </li>
           <li>
-            <i class="day-icon" data-feather="cloud-snow"></i>
-            <span class="day-name">Thu</span>
-            <span class="day-temp">08°C</span>
+            <i className="day-icon" data-feather="cloud-snow"></i>
+            <span className="day-name">Thu</span>
+            <span className="day-temp">08°C</span>
           </li>
           <li>
-            <i class="day-icon" data-feather="cloud-rain"></i>
-            <span class="day-name">Fry</span>
-            <span class="day-temp">19°C</span>
+            <i className="day-icon" data-feather="cloud-rain"></i>
+            <span className="day-name">Fry</span>
+            <span className="day-temp">19°C</span>
           </li>
-          <div class="clear"></div>
+          <div className="clear"></div>
         </ul>
       </div>
-      <div class="location-container">
-        <button class="location-button">
+      <div className="location-container">
+        <button className="location-button">
           {" "}
           <i data-feather="map-pin"></i>
           <span>Change location</span>
