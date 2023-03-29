@@ -2,8 +2,8 @@ import { useState } from "react";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "../api";
 
 export function useFetchWeatherData() {
-  const [currentWeather, setCurrentWeather] = useState(null);
-  const [forecast, setForecast] = useState(null);
+  const [currentWeather, setCurrentWeather] = useState("");
+  const [forecast, setForecast] = useState("");
   const fetchWeatherData = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
 
