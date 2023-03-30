@@ -15,8 +15,12 @@ export const useWeather = () => {
   }
 
   function getData(data) {
-    console.log(data);
-    return data;
+    const {
+      name,
+      main: { temp, feels_like, humidity },
+      wind: { speed },
+    } = data;
+    return { name, temp, feels_like, humidity, speed };
   }
 
   return {

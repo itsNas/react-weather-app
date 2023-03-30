@@ -5,9 +5,12 @@ import { useWeather } from "../hooks";
 
 function Container() {
   const { getData } = useWeather();
+  const handleData = (data) => {
+    getData({ data });
+  };
   return (
     <div className="container">
-      <CurrentWeather data={getData} />
+      <CurrentWeather data={handleData} />
       <Forecast />
     </div>
   );
