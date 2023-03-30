@@ -1,12 +1,11 @@
 import React from "react";
 import SearchBox from "./searchBox";
-// import { fetchWeatherData } from "./FetchWeatherData";
-import { useFetchWeatherData } from "../hooks";
+import { useWeather } from "../hooks";
 
 function Nav() {
-  const { fetchWeatherData } = useFetchWeatherData();
-  const handleOnSearchChange = (searchData) => {
-    fetchWeatherData(searchData);
+  const { submitRequest } = useWeather();
+  const handleOnSearchChange = (value) => {
+    submitRequest(value);
   };
 
   return (

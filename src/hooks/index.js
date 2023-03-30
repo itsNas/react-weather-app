@@ -1,29 +1,26 @@
-import { useState } from "react";
-import { WEATHER_API_KEY, WEATHER_API_URL } from "../api";
+import { WEATHER_API_URL, WEATHER_API_KEY } from "../api";
+export const useWeather = () => {
+  async function submitRequest(search) {
+    const endpoint = `${WEATHER_API_URL}/weather?q=${search}&units=metric&appid=${WEATHER_API_KEY}`;
 
-export function useFetchWeatherData() {
-  const [currentWeather, setCurrentWeather] = useState("");
-  const [forecast, setForecast] = useState("");
-  const fetchWeatherData = (searchData) => {
-    const [lat, lon] = searchData.value.split(" ");
+    try {
+      const response = await fetch(endpoint, { mode: "cors" });
+      if (!response.ok) throw new Error(`City ${search} not found`);
+      const data = getData(await response.json());
+      return data;
+    } catch (error) {
+      alert(error);
+      return null;
+    }
+  }
 
-    const currentWeatherFetch = fetch(
-      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
-    );
-    const forecastFetch = fetch(
-      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
-    );
+  function getData(data) {
+    console.log(data);
+    return data;
+  }
 
-    Promise.all([currentWeatherFetch, forecastFetch])
-      .then(async (response) => {
-        const weatherResponse = await response[0].json();
-        const forecastResponse = await response[1].json();
-
-        setCurrentWeather({ city: searchData.label, ...weatherResponse });
-        setForecast({ city: searchData.label, ...forecastResponse });
-      })
-      .catch(console.log);
+  return {
+    submitRequest,
+    getData,
   };
-  console.log(currentWeather, forecast);
-  return { fetchWeatherData };
-}
+};

@@ -3,8 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
-import CurrentWeather from "./components/CurrentWeather";
-import Forecast from "./components/Forecast";
+import Container from "./components/Container";
 
 function App() {
   return (
@@ -13,8 +12,7 @@ function App() {
         <Nav />
       </Header>
       <Main>
-        <CurrentWeather />
-        <Forecast />
+        <Container />
       </Main>
     </div>
   );
