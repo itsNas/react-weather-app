@@ -1,30 +1,31 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "../api";
-export const useWeather = () => {
-  async function submitRequest(search) {
-    const endpoint = `${WEATHER_API_URL}/weather?q=${search}&units=metric&appid=${WEATHER_API_KEY}`;
 
+export const useWeather = () => {
+  const [weatherData, setWeatherData] = useState(null);
+
+  async function fetchData(endpoint) {
     try {
-      const response = await fetch(endpoint, { mode: "cors" });
-      if (!response.ok) throw new Error(`City ${search} not found`);
-      const data = getData(await response.json());
-      return data;
+      const response = await axios.get(endpoint);
+      setWeatherData(response.data);
     } catch (error) {
-      alert(error);
-      return null;
+      console.error(error);
     }
   }
 
-  function getData(data) {
-    const {
-      name,
-      main: { temp, feels_like, humidity },
-      wind: { speed },
-    } = data;
-    return { name, temp, feels_like, humidity, speed };
-  }
+  useEffect(() => {
+    if (weatherData === null) return;
+    // console.log(weatherData);
+  }, [weatherData]);
 
+  async function submitRequest(search) {
+    const endpoint = `${WEATHER_API_URL}/weather?q=${search}&units=metric&appid=${WEATHER_API_KEY}`;
+    await fetchData(endpoint);
+  }
+  // console.log(weatherData);
   return {
+    weatherData,
     submitRequest,
-    getData,
   };
 };

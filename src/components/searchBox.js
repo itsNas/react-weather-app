@@ -5,7 +5,9 @@ function SearchBox({ onSearchChange }) {
 
   const handleOnChange = (e) => {
     e.preventDefault();
+    if (search === "") return;
     onSearchChange(search);
+
     setSearch("");
   };
 

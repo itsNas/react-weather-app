@@ -4,13 +4,15 @@ import Forecast from "./Forecast";
 import { useWeather } from "../hooks";
 
 function Container() {
-  const { getData } = useWeather();
-  const handleData = (data) => {
-    getData({ data });
-  };
+  const { weatherData } = useWeather();
+
   return (
     <div className="container">
-      <CurrentWeather data={handleData} />
+      {weatherData ? (
+        <CurrentWeather data={weatherData} />
+      ) : (
+        <div>Loading...</div>
+      )}
       <Forecast />
     </div>
   );
