@@ -137,8 +137,8 @@ body {
   left: 25px;
 }
 
-.weather-icon.feather {
-  height: 60px;
+.weather-container img {
+  height: 90px;
   width: auto;
 }
 

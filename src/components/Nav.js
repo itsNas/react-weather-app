@@ -1,13 +1,15 @@
-import React from "react";
-import SearchBox from "./searchBox";
-import { useWeather } from "../hooks";
+import React, { useState } from "react";
 
-function Nav() {
-  const { submitRequest } = useWeather();
-  const handleOnSearchChange = (value) => {
-    submitRequest(value);
+function Nav({ onCityChange }) {
+  const [value, setValue] = useState("");
+
+  const handleOnChange = (e) => {
+    e.preventDefault();
+    if (value === "") return;
+    onCityChange(value);
+    setValue("");
   };
-
+  console.log(value);
   return (
     <div className="Nav">
       <div className="navLogo">
@@ -18,7 +20,18 @@ function Nav() {
           alt={"logo"}
         />
       </div>
-      <SearchBox onSearchChange={handleOnSearchChange} />
+      <div className="SearchBox">
+        <form onSubmit={handleOnChange}>
+          <input
+            type="text"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Search for a city ..."
+            autoFocus
+          />
+          <button>Search</button>
+        </form>
+      </div>
     </div>
   );
 }

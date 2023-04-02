@@ -1,31 +1,42 @@
-import { useState, useEffect } from "react";
 import axios from "axios";
-import { WEATHER_API_URL, WEATHER_API_KEY } from "../api";
+import { useState, useEffect } from "react";
 
-export const useWeather = () => {
-  const [weatherData, setWeatherData] = useState(null);
-
-  async function fetchData(endpoint) {
-    try {
-      const response = await axios.get(endpoint);
-      setWeatherData(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+export const useFetch = (city) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (weatherData === null) return;
-    // console.log(weatherData);
-  }, [weatherData]);
+    const options = {
+      method: "GET",
+      url: "https://weatherapi-com.p.rapidapi.com/forecast.json",
+      params: { q: `${city}` },
+      headers: {
+        "X-RapidAPI-Key": "bac3cc626fmshedc24300a0f5e93p13ff4fjsn040a85627261",
+        "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+      },
+    };
 
-  async function submitRequest(search) {
-    const endpoint = `${WEATHER_API_URL}/weather?q=${search}&units=metric&appid=${WEATHER_API_KEY}`;
-    await fetchData(endpoint);
-  }
-  // console.log(weatherData);
-  return {
-    weatherData,
-    submitRequest,
-  };
+    const source = axios.CancelToken.source();
+    setLoading(true);
+    axios
+      .request(options, { cancelToken: source.token })
+      .then(function (response) {
+        setData(response.data);
+      })
+      .catch(function (err) {
+        if (!city) {
+          setError("No city specified");
+        }
+      })
+      .finally(function () {
+        setLoading(false);
+      });
+    return () => {
+      source.cancel("Pervious request canceled");
+    };
+  }, [city]);
+
+  // console.log(data);
+  return { data, loading, error };
 };
