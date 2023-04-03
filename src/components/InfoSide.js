@@ -3,7 +3,6 @@ import DayCard from "./DayCard";
 
 function InfoSide({ data, loading, error }) {
   const [selectedIndex, setSelectedIndex] = useState(1);
-  console.log(selectedIndex);
 
   if (loading) {
     return <div>Loading ............</div>;

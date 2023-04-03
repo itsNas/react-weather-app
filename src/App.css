@@ -33,19 +33,25 @@ body {
 
 .Nav {
   display: flex;
-  justify-content: start;
+  justify-content: space-around;
   align-items: center;
-  gap: 20px;
+  gap: 5rem;
 }
 
 .SearchBox input {
-  width: 50vw;
+  min-width: 25vw;
+  width: 30vw;
   height: 35px;
   margin: 15px 0;
   border: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   font-size: 1.2rem;
+}
+
+.SearchBox input:focus {
+  outline: none;
+  border: none;
 }
 
 .SearchBox button {
@@ -62,8 +68,9 @@ body {
 }
 
 .container {
-  border-radius: 0px;
-  /* margin: 5px; */
+  max-width: auto;
+  border-radius: 25px;
+  margin: 5px;
   -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
   background-color: #222831;
@@ -157,12 +164,16 @@ body {
   float: left;
   height: 100%;
   padding-top: 25px;
+  margin: 10px auto;
+  margin-left: 50px;
+  margin-right: 5px;
 }
 
 .today-info {
+  width: 25vw;
   padding: 15px;
   margin: 0 25px 25px 25px;
-  /* 	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
+  box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
 
@@ -186,7 +197,6 @@ body {
   -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  background: #;
 }
 
 .week-list > li {

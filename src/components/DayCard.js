@@ -17,7 +17,7 @@ function DayCard({ data, loading, error, onClickIndex }) {
     onClickIndex(index);
   };
 
-  const days = data.forecast.forecastday.slice(0, 3);
+  const days = data.forecast.forecastday.slice(0, 4);
   const dayList = days.map((day, index) => (
     <li
       key={index}
