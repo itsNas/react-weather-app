@@ -221,7 +221,7 @@ body {
   text-align: center;
 }
 
-.week-list > li .day-icon {
+.week-list > img .day-icon {
   display: block;
   height: 30px;
   width: auto;

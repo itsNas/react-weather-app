@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useState } from "react";
 
 function Forecast({ data, loading, error }) {
@@ -17,14 +18,20 @@ function Forecast({ data, loading, error }) {
 
   const days = data.forecast.forecastday.slice(0, 3);
 
+  const selectedDay = days[selectedCard].day;
+
   const dayList = days.map((day, index) => (
     <li
       key={index}
       className={selectedCard === index ? "active" : ""}
       onClick={() => handleCardClick(index)}
     >
-      <i className="day-icon" data-feather={day.day.condition.icon}></i>
-      <span className="day-name">{day.date}</span>
+      <img
+        className="day-icon"
+        src={day.day.condition.icon}
+        alt="weather icon"
+      ></img>
+      <span className="day-name">{moment(day.date).format("dddd")}</span>
       <span className="day-temp">{day.day.avgtemp_c}°C</span>
     </li>
   ));
@@ -35,19 +42,17 @@ function Forecast({ data, loading, error }) {
         <div className="today-info">
           <div className="precipitation">
             <span className="title">PRECIPITATION</span>
-            <span className="value">
-              :{data.forecast.forecastday[0].day.daily_chance_of_rain} %
-            </span>
+            <span className="value">{selectedDay.daily_chance_of_rain} %</span>
             <div className="clear"></div>
           </div>
           <div className="humidity">
             <span className="title">HUMIDITY</span>
-            <span className="value">34 %</span>
+            <span className="value">{selectedDay.avghumidity} %</span>
             <div className="clear"></div>
           </div>
           <div className="wind">
             <span className="title">WIND</span>
-            <span className="value">0 km/h</span>
+            <span className="value">{selectedDay.maxwind_kph} km/h</span>
             <div className="clear"></div>
           </div>
         </div>
@@ -58,12 +63,12 @@ function Forecast({ data, loading, error }) {
           <div className="clear"></div>
         </ul>
       </div>
-      <div className="location-container">
+      {/* <div className="location-container">
         <button className="location-button">
           <i data-feather="map-pin"></i>
           <span>Change location</span>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
