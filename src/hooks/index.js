@@ -15,6 +15,7 @@ export const useFetch = (city) => {
         "X-RapidAPI-Key": "bac3cc626fmshedc24300a0f5e93p13ff4fjsn040a85627261",
         "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
       },
+      timeout: 10000, // 10 seconds
     };
 
     const source = axios.CancelToken.source();
@@ -25,15 +26,16 @@ export const useFetch = (city) => {
         setData(response.data);
       })
       .catch(function (err) {
-        if (!city) {
-          setError("No city specified");
-        }
+        console.error("Error fetching data: ", err);
+        setError(err);
       })
       .finally(function () {
         setLoading(false);
       });
     return () => {
-      source.cancel("Pervious request canceled");
+      if (source) {
+        source.cancel("Previous request canceled");
+      }
     };
   }, [city]);
 
