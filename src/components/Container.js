@@ -6,7 +6,7 @@ function Container({ data, loading, error }) {
   return (
     <div className="container">
       <CurrentWeather data={data} loading={loading} error={error} />
-      <Forecast />
+      <Forecast data={data} loading={loading} error={error} />
     </div>
   );
 }

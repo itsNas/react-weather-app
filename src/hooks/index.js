@@ -10,7 +10,7 @@ export const useFetch = (city) => {
     const options = {
       method: "GET",
       url: "https://weatherapi-com.p.rapidapi.com/forecast.json",
-      params: { q: `${city}` },
+      params: { q: `${city}`, days: "3" },
       headers: {
         "X-RapidAPI-Key": "bac3cc626fmshedc24300a0f5e93p13ff4fjsn040a85627261",
         "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
