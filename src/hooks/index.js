@@ -9,7 +9,7 @@ export const useFetch = (city) => {
   useEffect(() => {
     const options = {
       method: "GET",
-      url: " http://api.weatherapi.com/v1/forecast.json",
+      url: " https://api.weatherapi.com/v1/forecast.json",
       params: {
         q: `${city}`,
         days: "3",
