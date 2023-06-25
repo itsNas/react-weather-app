@@ -11,8 +11,8 @@ function Nav({ onCityChange }) {
   };
   console.log(value);
   return (
-    <div className="Nav">
-      <div className="navLogo">
+    <div className="flex">
+      <div className="">
         <img
           className="img-fluid "
           src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
@@ -20,8 +20,8 @@ function Nav({ onCityChange }) {
           alt={"logo"}
         />
       </div>
-      <div className="SearchBox">
-        <form onSubmit={handleOnChange}>
+      <div className="">
+        <form onSubmit={handleOnChange} className="flex">
           <input
             type="text"
             value={value}
