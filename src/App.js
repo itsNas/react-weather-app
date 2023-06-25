@@ -14,7 +14,7 @@ function App() {
       <Header>
         <Nav onCityChange={setCity} />
       </Header>
-      <Main>
+      <Main className="">
         <Container data={data} loading={loading} error={error} />
       </Main>
     </div>
