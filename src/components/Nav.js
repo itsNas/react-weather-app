@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FiSearch } from "react-icons/fi";
 
 function Nav({ onCityChange }) {
   const [value, setValue] = useState("");
@@ -11,10 +12,10 @@ function Nav({ onCityChange }) {
   };
   console.log(value);
   return (
-    <div className="flex">
+    <div className="flex bg-gradient-to-r from-purple-800 to-blue-600 items-center justify-between px-3 py-1">
       <div className="">
         <img
-          className="img-fluid "
+          className=" w-24"
           src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
           style={{ maxWidth: "100px", height: "auto" }}
           alt={"logo"}
@@ -28,8 +29,11 @@ function Nav({ onCityChange }) {
             onChange={(e) => setValue(e.target.value)}
             placeholder="Search for a city ..."
             autoFocus
+            className=" rounded-md px-2"
           />
-          <button>Search</button>
+          <button>
+            <FiSearch className="absolute -ml-6 -my-2 " />
+          </button>
         </form>
       </div>
     </div>
