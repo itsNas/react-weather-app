@@ -1,15 +1,8 @@
 import moment from "moment";
 import React, { useState } from "react";
 
-function DayCard({ data, loading, error, onClickIndex }) {
+function DayCard({ data, onClickIndex }) {
   const [selectedCard, setSelectedCard] = useState(0);
-  if (loading) {
-    return <div>Loading ............</div>;
-  }
-
-  if (error) {
-    return <div>{error.message}</div>;
-  }
 
   const onClick = (index) => {
     setSelectedCard(index);
