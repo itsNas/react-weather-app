@@ -1,15 +1,7 @@
 import moment from "moment";
 import React from "react";
 
-function CurrentWeather({ data, loading, error }) {
-  if (loading) {
-    return <div>Loading ............</div>;
-  }
-
-  if (error) {
-    return <div>{error.message}</div>;
-  }
-
+function CurrentWeather({ data }) {
   return (
     <div className="weather-side">
       <div className="weather-gradient"></div>

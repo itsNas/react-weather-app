@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import DayCard from "./DayCard";
 
-function InfoSide({ data, loading, error }) {
+function InfoSide({ data }) {
   const [selectedIndex, setSelectedIndex] = useState(1);
-
-  if (loading) {
-    return <div>Loading ............</div>;
-  }
-
-  if (error) {
-    return <div>{error.message}</div>;
-  }
 
   const day = data.forecast.forecastday[selectedIndex].day;
 
@@ -34,12 +26,7 @@ function InfoSide({ data, loading, error }) {
             <div className="clear"></div>
           </div>
         </div>
-        <DayCard
-          data={data}
-          loading={loading}
-          error={error}
-          onClickIndex={setSelectedIndex}
-        />
+        <DayCard data={data} onClickIndex={setSelectedIndex} />
       </div>
     </div>
   );
