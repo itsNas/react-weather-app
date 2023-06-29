@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="h-screen w-screen bg-gradient-to-br from-indigo-800 to-violet-700">
       <Header>
         <Nav onCityChange={setCity} />
       </Header>

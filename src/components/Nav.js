@@ -12,7 +12,7 @@ function Nav({ onCityChange }) {
   };
   console.log(value);
   return (
-    <div className="flex bg-gradient-to-r from-purple-800 to-blue-600 items-center justify-between px-3 py-1">
+    <div className="flex items-center justify-between px-3 py-1">
       <div className="">
         <img
           className=" w-24"
