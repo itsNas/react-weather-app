@@ -5,6 +5,16 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+  }
+
+  body {
+    @apply m-0 p-0 bg-gradient-to-br from-indigo-900 to-blue-200 text-white;
+  }
+
   h6 {
     @apply text-sm md:text-base text-zinc-400 font-bold uppercase tracking-widest;
   }
@@ -18,13 +28,8 @@
   }
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: whitesmoke;
+@layer components {
+  .weather-info {
+    @apply flex;
+  }
 }

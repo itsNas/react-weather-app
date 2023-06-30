@@ -32,7 +32,7 @@ function Nav({ onCityChange }) {
             className=" rounded-md px-2"
           />
           <button>
-            <FiSearch className="absolute -ml-6 -my-2 " />
+            <FiSearch className="absolute -ml-6 -my-2 text-gray-900" />
           </button>
         </form>
       </div>

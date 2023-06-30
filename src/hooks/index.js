@@ -39,6 +39,6 @@ export const useFetch = (city) => {
     };
   }, [city]);
 
-  // console.log(data);
+  console.log(data);
   return { data, loading, error };
 };
