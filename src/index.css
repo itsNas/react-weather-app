@@ -53,7 +53,7 @@
     align-items: center;
   } */
 
-  /* .week-list > li {
+  .week-list li {
     float: left;
     padding: 20px;
     cursor: pointer;
@@ -63,9 +63,9 @@
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-  } */
+  }
 
-  /* .week-list > li:hover {
+  .week-list > li:hover {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -73,7 +73,7 @@
     color: #222831;
     -webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
-  } */
+  }
 
   /* .week-list > li.active {
     background: #fff;
@@ -81,13 +81,11 @@
     border-radius: 10px;
   } */
 
-  /* .week-list > li .day-name {
+  .week-list > li .day-name {
     display: block;
     margin: 10px 0 0 0;
     text-align: center;
-  } */
-
-  /*
+  }
 
   .week-list > img .day-icon {
     display: block;
@@ -101,5 +99,5 @@
     text-align: center;
     margin: 10px 0 0 0;
     font-weight: 700;
-  } */
+  }
 }

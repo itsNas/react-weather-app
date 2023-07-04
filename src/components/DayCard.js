@@ -20,9 +20,7 @@ function DayCard({ data, onClickIndex }) {
             <li
               key={index}
               className={
-                selectedCard === index
-                  ? " bg-slate-50 text-black"
-                  : " float-left p-5 cursor-pointer"
+                selectedCard === index ? " bg-slate-50 text-black" : ""
               }
               onClick={() => handleClick(index)}
             >
@@ -31,7 +29,7 @@ function DayCard({ data, onClickIndex }) {
                 src={day.day.condition.icon}
                 alt="weather icon"
               ></img>
-              <span className="day-name block text-center">
+              <span className="day-name">
                 {moment(day.date).format("dddd")}
               </span>
               <span className="day-temp">{day.day.avgtemp_c}°C</span>
