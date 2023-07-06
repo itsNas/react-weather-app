@@ -15,7 +15,7 @@ function Nav({ onCityChange }) {
     <div className="flex items-center justify-between px-3 py-1">
       <div className="">
         <img
-          className=" w-24"
+          className="w-24"
           src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
           style={{ maxWidth: "100px", height: "auto" }}
           alt={"logo"}

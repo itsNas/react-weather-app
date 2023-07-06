@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply m-0 p-0 bg-gradient-to-br from-indigo-900 to-blue-200 text-white;
+    @apply m-0 p-0 bg-gradient-to-br from-indigo-800 to-blue-900 text-white;
   }
 
   h6 {
@@ -20,7 +20,7 @@
   }
 
   p {
-    @apply leading-loose;
+    @apply leading-loose text-sm xs:text-base;
   }
 
   sup {
@@ -30,7 +30,7 @@
 
 @layer components {
   .card {
-    @apply m-2 p-3 bg-slate-400/50 rounded-lg;
+    @apply m-2 p-3 bg-slate-200/30 rounded-lg;
   }
 
   .cardInfo {
@@ -40,15 +40,15 @@
   .icon {
     @apply text-xl;
   }
-
-  /* .week-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 35px;
-    -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
-    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    display: flex;
+  /* 
+  .week-list {
+    list-style-type: none; */
+  /* padding: 0; */
+  /* margin: 20px 35px; */
+  /* -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
+  /* border-radius: 10px; */
+  /* display: flex;
     justify-content: center;
     align-items: center;
   } */
@@ -75,11 +75,11 @@
     box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
   }
 
-  /* .week-list > li.active {
+  .week-list > li.active {
     background: #fff;
     color: #222831;
     border-radius: 10px;
-  } */
+  }
 
   .week-list > li .day-name {
     display: block;
@@ -87,12 +87,12 @@
     text-align: center;
   }
 
-  .week-list > img .day-icon {
+  /* .week-list > img .day-icon { 
     display: block;
     height: 20px;
     width: auto;
-    margin: 0 auto;
-  }
+    margin: 0 auto; 
+  } */
 
   .week-list > li .day-temp {
     display: block;

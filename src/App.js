@@ -25,7 +25,7 @@ function App() {
         <Nav onCityChange={setCity} />
       </Header>
       <Main>
-        <div className="container">
+        <div className="flex flex-col h-full p-2 xs:h-screen">
           <CurrentWeather data={data} />
           <InfoSide data={data} />
         </div>

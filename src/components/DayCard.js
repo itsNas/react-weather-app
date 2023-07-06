@@ -13,30 +13,24 @@ function DayCard({ data, onClickIndex }) {
   const days = data.forecast.forecastday.slice(0, 3);
 
   return (
-    <div>
-      <div className="week-container">
-        <ul className="week-list list-none p-0 mx-5 my-8 rounded-lg flex justify-center items-center bg-slate-400/50 drop-shadow-xl">
-          {days.map((day, index) => (
-            <li
-              key={index}
-              className={
-                selectedCard === index ? " bg-slate-50 text-black" : ""
-              }
-              onClick={() => handleClick(index)}
-            >
-              <img
-                className="day-icon"
-                src={day.day.condition.icon}
-                alt="weather icon"
-              ></img>
-              <span className="day-name">
-                {moment(day.date).format("dddd")}
-              </span>
-              <span className="day-temp">{day.day.avgtemp_c}°C</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="week-container">
+      <ul className="week-list bg-slate-400/30 mx-5 my-8 p-0 drop-shadow-2xl rounded-lg flex items-center justify-center">
+        {days.map((day, index) => (
+          <li
+            key={index}
+            className={selectedCard === index ? "active" : ""}
+            onClick={() => handleClick(index)}
+          >
+            <img
+              className="block h-16 w-auto mx-0 my-auto xs:h-20"
+              src={day.day.condition.icon}
+              alt="weather icon"
+            ></img>
+            <p className="day-name">{moment(day.date).format("dddd")}</p>
+            <p className="day-temp">{day.day.avgtemp_c}°C</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

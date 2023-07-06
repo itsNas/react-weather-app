@@ -3,12 +3,12 @@ import DayCard from "./DayCard";
 import { WiMoonrise, WiMoonset, WiSunrise, WiSunset } from "react-icons/wi";
 
 function InfoSide({ data }) {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(1);
 
   const day = data.forecast.forecastday[selectedIndex].day;
 
   return (
-    <div className="info-container">
+    <div className="info-container mt-4">
       <div className="weather-info flex justify-evenly">
         <div className="astro-info">
           <div className="sun card">
