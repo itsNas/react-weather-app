@@ -29,7 +29,7 @@ function Nav({ onCityChange }) {
             onChange={(e) => setValue(e.target.value)}
             placeholder="Search for a city ..."
             autoFocus
-            className=" rounded-md px-2"
+            className=" rounded-md px-2 text-black"
           />
           <button>
             <FiSearch className="absolute -ml-6 -my-2 text-gray-900" />
