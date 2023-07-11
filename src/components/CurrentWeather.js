@@ -4,7 +4,7 @@ import React from "react";
 function CurrentWeather({ data }) {
   return (
     <div className="relative m-2 p-3 rounded-xl drop-shadow-lg text-white bg-[url('https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')] ">
-      <div className="absolute w-full h-full -m-3 rounded-lg bg-gradient-to-br from-slate-400/70 to-slate-600/50"></div>
+      <div className="absolute w-full h-full -m-3 rounded-lg bg-gradient-to-br from-slate-400/50 to-slate-600/50"></div>
 
       <div className="relative">
         <div className="date-container font-semibold">
@@ -19,7 +19,7 @@ function CurrentWeather({ data }) {
             {moment(data.forecast.forecastday[0].date).format("DD/MM/YYYY")}
           </div>
         </div>
-        <div className="weather-container mt-10 flex justify-between items-center">
+        <div className="weather-container mt-10 flex justify-between items-center md:mt-40">
           <div className="weather-info">
             <h1 className="weather-temp text-6xl font-medium">
               {data.current.temp_c}°C

@@ -20,12 +20,12 @@ function App() {
   }
 
   return (
-    <div className="h-full w-screen">
+    <div className="max-w-3xl bg-slate-300/50 xs:h-screen md:m-10 md:rounded-xl md:h-auto">
       <Header>
         <Nav onCityChange={setCity} />
       </Header>
       <Main>
-        <div className="flex flex-col h-full p-2 xs:h-screen">
+        <div className="flex flex-col p-2 md:flex-row">
           <CurrentWeather data={data} />
           <InfoSide data={data} />
         </div>
