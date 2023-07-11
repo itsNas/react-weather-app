@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div className="max-w-3xl bg-slate-300/50 xs:h-screen md:m-10 md:rounded-xl md:h-auto">
+    <div className="max-w-3xl bg-slate-600/50 xs:h-screen md:m-10 md:rounded-xl md:h-auto ">
       <Header>
         <Nav onCityChange={setCity} />
       </Header>
