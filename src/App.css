@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap");
 
 :root {
   --gradient: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
@@ -281,10 +281,10 @@ body {
   height: 1em;
   width: auto;
   margin-right: 5px;
-}
+} */
 
 /* Mobile devices (portrait) */
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
   .Main {
     flex-direction: column;
   }
@@ -303,4 +303,4 @@ body {
     width: 100%;
     margin-bottom: 10px;
   }
-}
+} */
