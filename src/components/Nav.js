@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import Logo from "../assets/cloudy.png";
 
 function Nav({ onCityChange }) {
   const [value, setValue] = useState("");
@@ -13,13 +14,14 @@ function Nav({ onCityChange }) {
   console.log(value);
   return (
     <div className="flex items-center justify-between px-3 py-1">
-      <div className="">
+      <div className="flex items-center gap-3">
         <img
-          className="w-24"
-          src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
+          className="w-10"
+          src={Logo}
           style={{ maxWidth: "100px", height: "auto" }}
           alt={"logo"}
         />
+        <p className=" font-semibold hidden md:block">Weathernas</p>
       </div>
       <div className="">
         <form onSubmit={handleOnChange} className="flex">

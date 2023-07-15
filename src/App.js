@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { useState } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -6,13 +5,18 @@ import Nav from "./components/Nav";
 import CurrentWeather from "./components/CurrentWeather";
 import InfoSide from "./components/InfoSide";
 import { useFetch } from "./hooks";
+import ReactLoading from "react-loading";
 
-function App() {
+function App({ type, color }) {
   const [city, setCity] = useState("Kedah");
   const { data, loading, error } = useFetch(city);
 
   if (loading) {
-    return <div className="text-center">Loading ............</div>;
+    return (
+      <div className="h-screen w-screen flex items-center justify-center">
+        <ReactLoading type={type} color={color} height={60} width={100} />
+      </div>
+    );
   }
 
   if (error) {
